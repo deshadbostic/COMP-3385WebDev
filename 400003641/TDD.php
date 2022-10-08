@@ -19,6 +19,12 @@ use PhpUnit\Framework\TestCase;
     include './Controller/ProfileController.php';
     include './Controller/IndexController.php';
 
+    include './View/SignupView.php';
+    include './View/CoursesView.php';
+    include './View/LoginView.php';
+    include './View/ProfileView.php';
+    include './View/IndexView.php';
+
 class TDD extends TestCase{
 
 public function Setup():void{
@@ -704,12 +710,14 @@ public function testIsObjectS():void{
    );
 }
 
-public function testCreate():void{
+public function testCeateandDestroy():void{
    $obj= $this->S->create();
-}
-
-public function testDestroy():void{
-   $obj= $this->S->destroy();
+   try {
+       $obj= $this->S->destroy();
+   }catch(Exception $e){
+      this->assertTrue(0,"Session was not created and thus could not be destroyed");
+   }
+  
 }
 
 public function testAdd():void{
@@ -723,9 +731,16 @@ public function testAdd():void{
      }
 }
 
-public function testRemove():void{
-   //arange
-   $name="hothothot";
+public function testAddandRemove():void{
+       //arange
+       $name="hothothot";
+       $value="hothothot";
+       try{
+          $obj= $this->S->add($name,$value);
+      }catch(Exception $e){
+         this->assertTrue(0,"Parameters are causing a problem in Add method in Session Class ");
+      }
+      
    try{
       $obj= $this->S->remove($name);
   }catch(Exception $e){
