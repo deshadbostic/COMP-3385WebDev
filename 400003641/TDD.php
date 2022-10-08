@@ -740,11 +740,11 @@ public function testAddandRemove():void{
       }catch(Exception $e){
          this->assertTrue(0,"Parameters are causing a problem in Add method in Session Class ");
       }
-      
+
    try{
       $obj= $this->S->remove($name);
   }catch(Exception $e){
-     this->assertTrue(0,"Name parameter is causing a problem in Remove method in Session Class  ");
+     this->assertTrue(0,"Name parameter is causing a problem in Remove method this is not a variable in Session Class  ");
   }
 }
 
