@@ -1,5 +1,4 @@
 <?php 
-require_once('Controller.php');
 
  class IndexController extends Controller
 {
@@ -13,14 +12,17 @@ return [2,3,4,5];
 
 
  public function run(){
-  $v->setTemplate(Tpl_Dir.'/index' .'.tpl.php');
+   $this -> setView(new View()); 
+
+        $this ->view->setTemplate(TPL_DIR.'\index' .'.tpl.php');
 $this->setModel(new IndexModel());
-$this->setView($v);
 
 $this->model->attach($this->view);
 $data=$this->model->getAll();
-$this->model->update($data);
-$this->model->notify;
+// $this->model->update($data);
+$this->model->notify();
+
+$this -> view -> display();
  }
 }
 
