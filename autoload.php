@@ -4,7 +4,7 @@ if (!defined('APP_DIR')){
 define ("ROOT_DIR", 'D:\Programming\Programs\xampp\htdocs\Assignment1pain' ) ;
 define ("APP_DIR", ROOT_DIR. "\app");
 define ("FRAMEWORK DIR", ROOT_DIR .' \framework ' ) ;
-define ('TPL_DIR', APP_DIR .'\View');
+define ('TPL_DIR', ROOT_DIR. "\tpl");
 define ('DATA_DIR', ROOT_DIR. '\data');
 }
 

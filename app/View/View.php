@@ -21,7 +21,7 @@
       }
       public function update(\SplSubject $subject): void
       {
-        $subject->giveupdate();
+        
           if ($subject->state < 3) {
             //   echo "ConcreteObserverA: Reacted to the event.\n";
           }

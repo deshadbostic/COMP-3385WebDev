@@ -5,7 +5,7 @@ abstract class Model implements SplSubject
 {
     public $state;
     private $observers;
-
+    protected $updateddata = [];
     public function __construct()
     {
         $this->observers = new \SplObjectStorage();
@@ -32,7 +32,7 @@ abstract class Model implements SplSubject
     }
 
     public function Update(){
-        
+          $this -> updateddata = $data;
     }
     public function someBusinessLogic(): void
     {
