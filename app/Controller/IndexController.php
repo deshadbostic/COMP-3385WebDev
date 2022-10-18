@@ -19,7 +19,7 @@ $this->setModel(new IndexModel());
 
 $this->model->attach($this->view);
 $data=$this->model->getAll();
-// $this->model->update($data);
+ $this->model->update($data);
 $this->model->notify();
 
 $this -> view -> display();

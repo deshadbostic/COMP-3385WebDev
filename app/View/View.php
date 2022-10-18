@@ -14,10 +14,14 @@
 
 
       public function addVar($name, $value){
-            
+            if(preg_match()){
+                trigger_error('invalid variable name used',E_USER_ERROR);
+            }
+            $this->data[$name]=$value;
       }
       public function update(\SplSubject $subject): void
       {
+        $subject->giveupdate();
           if ($subject->state < 3) {
             //   echo "ConcreteObserverA: Reacted to the event.\n";
           }
